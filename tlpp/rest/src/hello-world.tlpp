@@ -1,0 +1,20 @@
+#include "tlpp-core.th"
+#include "tlpp-rest.th"
+
+@get('helloWorld', 'Endpoint com o objetivo de retornar a mensagem "Hello World!".')
+
+user function helloWorld()
+
+    local lRet as logical   // Armazena o retorno lógico do endpoint
+    local cRet as character // Armazena a mensagem a ser retornada neste endpoint
+    local jRet as Json      // Armazena o objeto JSON a ser retornado neste endpoint
+
+    lRet := .T.
+    cRet := 'Hello World!'
+    jRet := jsonObject():new()
+
+    jRet['message'] := cRet
+
+    oRest:setResponse(jRet)
+
+return lRet
