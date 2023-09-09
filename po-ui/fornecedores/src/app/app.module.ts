@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+
+import { PoModule } from '@po-ui/ng-components';
+import { PoTemplatesModule } from '@po-ui/ng-templates';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +25,10 @@ import { ExcluirFornecedorComponent } from './pages/excluir/excluir-fornecedor.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    PoModule,
+    PoTemplatesModule,
+    AppRoutingModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
